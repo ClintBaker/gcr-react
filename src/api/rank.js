@@ -43,3 +43,13 @@ export const editRank = async (setRank, id, formData, setFormData) => {
     alert("Unable to update rank");
   }
 };
+
+export const createRank = async (navigate, formData) => {
+  const rank = await axios.post(`${url}/rank`, formData);
+
+  if (rank.status === 200) {
+    navigate("/");
+  } else {
+    alert("Unable to create rank");
+  }
+};
